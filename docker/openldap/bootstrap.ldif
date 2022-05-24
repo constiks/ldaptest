@@ -1,0 +1,72 @@
+dn: ou=groups,dc=company,dc=local
+changetype: add
+ou: groups
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=users,dc=company,dc=local
+changetype: add
+ou: users
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=group_admin,ou=groups,dc=company,dc=local
+changetype: add
+cn: group_admin
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: cn=admin_user1,ou=users,dc=company,dc=local
+uniqueMember: cn=admin_user2,ou=users,dc=company,dc=local
+
+dn: cn=group_readonly,ou=groups,dc=company,dc=local
+changetype: add
+cn: group_readonly
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: cn=readonly_user1,ou=users,dc=company,dc=local
+uniqueMember: cn=readonly_user2,ou=users,dc=company,dc=local
+
+dn: cn=admin_user1,ou=users,dc=company,dc=local
+changetype: add
+givenName: admin_user1
+sn: admin_user1
+cn: admin_user1
+uid: admin_user1
+userPassword:: e1NTSEF9MmFOTUxMVlZsVldlZ2N0OTVvM3JqbXFDUm5zQnFWTnY=
+objectClass: inetOrgPerson
+objectClass: top
+memberOf: cn=group_admin,ou=groups,dc=company,dc=local
+
+dn: cn=admin_user2,ou=users,dc=company,dc=local
+changetype: add
+givenName: admin_user2
+sn: admin_user2
+cn: admin_user2
+uid: admin_user2
+userPassword:: e1NTSEF9emVadXFxaFFyRnJkV3dFRVpGN1VwaVg1am5EQ29Mb3o=
+objectClass: inetOrgPerson
+objectClass: top
+memberOf: cn=group_admin,ou=groups,dc=company,dc=local
+
+dn: cn=readonly_user1,ou=users,dc=company,dc=local
+changetype: add
+givenName: readonly_user1
+sn: readonly_user1
+cn: readonly_user1
+uid: readonly_user1
+userPassword:: e1NTSEF9UXdLYUJQYmx1QndrSyszZ2N3L0dwVUZVNEFaMHVvVDM=
+objectClass: inetOrgPerson
+objectClass: top
+memberOf: cn=group_readonly,ou=groups,dc=company,dc=local
+
+dn: cn=readonly_user2,ou=users,dc=company,dc=local
+changetype: add
+givenName: readonly_user2
+sn: readonly_user2
+cn: readonly_user2
+uid: readonly_user2
+userPassword:: e1NTSEF9OG5teE45SEFqY2VBVmhBRG5QNTNsOW5Cb3BqK0RlYVg=
+objectClass: inetOrgPerson
+objectClass: top
+memberOf: cn=group_readonly,ou=groups,dc=company,dc=local
+
